@@ -1,0 +1,14 @@
+.operador{
+    position: fixed;
+    left: 39%;
+    top: 50px;
+    border: 2px solid;
+    padding: 9px;
+    background-color: beige;
+}
+.titulo1{
+    text-align: center;
+}
+.form{
+    text-align: center;
+}
