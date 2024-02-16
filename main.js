@@ -9,19 +9,34 @@ const convertir = () => {
 
     if(document.getElementById("moneda1").checked){
         resultado = valor * dolar;
-        alert("El cambio de Pesos a Dolares es de : $"+ resultado);
+        localStorage.setItem("resultado", resultado);
+        Swal.fire("El cambio de Pesos a Dolares es: $"+ resultado);
     }
     else if(document.getElementById("moneda2").checked){
         resultado = valor * euro;
-        alert("El cambio de Pesos a Euros es de : $"+ resultado);
+        localStorage.setItem("resultado", resultado);
+        Swal.fire("El cambio de Pesos a Euros: $"+ resultado);
     }
     else if(document.getElementById("moneda3").checked){
         resultado = valor * real;
-        alert("El cambio de Pesos a Reales es de : $"+ resultado);
+        localStorage.setItem("resultado", resultado);
+        Swal.fire("El cambio de Pesos a Reales: $"+ resultado);
     }
     else{
-        alert("Imposible de convertir")
+        Swal.fire({
+            icon: "error",
+            title: "ERROR",
+            text: "Imposible de convertir",
+            footer: "Por favor, coloque un valor real"
+        });
     }
 }
 
 boton.addEventListener("click", convertir);
+
+window.addEventListener('DOMContentLoaded', () => {
+    let resultadoGuardado = localStorage.getItem('resultado');
+    if (resultadoGuardado) {
+    document.getElementById('resultado').textContent = "Resultado almacenado: $" + resultadoGuardado;
+    }
+    });
