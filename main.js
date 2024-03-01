@@ -3,43 +3,8 @@ let boton = document.getElementById("boton")
 const convertir = () => {
     let valor = parseInt(document.getElementById("cantidad").value);
     let resultado = 0;
-/*    let dolar = 831.32;
-    let euro = 895.26;
-    let real = 5.33;
-    let libra = 1066.86;
-
-    if(document.getElementById("moneda1").checked){
-        resultado = valor * dolar;
-        localStorage.setItem("resultado", resultado);
-        Swal.fire("El cambio de Pesos a Dolares es: $"+ resultado);
-    }
-    else if(document.getElementById("moneda2").checked){
-        resultado = valor * euro;
-        localStorage.setItem("resultado", resultado);
-        Swal.fire("El cambio de Pesos a Euros es: $"+ resultado);
-    }
-    else if(document.getElementById("moneda3").checked){
-        resultado = valor * real;
-        localStorage.setItem("resultado", resultado);
-        Swal.fire("El cambio de Pesos a Reales es: $"+ resultado);
-    }
-    else if(document.getElementById("moneda4").checked){
-        resultado = valor * libra;
-        localStorage.setItem("resultado", resultado);
-        Swal.fire("El cambio de Pesos a Libras Esterlinas es: $"+ resultado);
-    }
-    else{
-        Swal.fire({
-            icon: "error",
-            title: "ERROR",
-            text: "Imposible de convertir",
-            footer: "Por favor, coloque un valor real"
-        });
-    }
-}
-*/
-const API_KEY = 'd8ad3d99cd404a2bbb599aaaf20bad75';
-const API_URL = `https://openexchangerates.org/api/latest.json?app_id=d8ad3d99cd404a2bbb599aaaf20bad75`;
+    const API_KEY = 'd8ad3d99cd404a2bbb599aaaf20bad75';
+    const API_URL = `https://openexchangerates.org/api/latest.json?app_id=d8ad3d99cd404a2bbb599aaaf20bad75`;
 
 fetch(API_URL)
     .then(response => response.json())
