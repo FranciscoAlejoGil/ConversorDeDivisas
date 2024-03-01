@@ -3,6 +3,14 @@ let boton = document.getElementById("boton")
 const convertir = () => {
     let valor = parseInt(document.getElementById("cantidad").value);
     let resultado = 0;
+    if (valor <= 0) {
+        Swal.fire({
+            icon: "error",
+            title: "ERROR",
+            text: "Imposible de convertir. Por favor, coloque un valor real y mayor que 0",
+        });
+        return; 
+    }
     const API_KEY = 'd8ad3d99cd404a2bbb599aaaf20bad75';
     const API_URL = `https://openexchangerates.org/api/latest.json?app_id=d8ad3d99cd404a2bbb599aaaf20bad75`;
 
@@ -30,12 +38,16 @@ fetch(API_URL)
                 localStorage.setItem("resultado", resultado);
                 Swal.fire("La cantidad de Libras Esterlinas seleccionadas son: $"+ resultado.toFixed(2),"(El precio esta reflejado en Pesos Argentinos)"); 
             }
+            else if(document.getElementById("moneda5").checked){
+                resultado = (valor * rates.ARS) / rates.JPY;
+                localStorage.setItem("resultado", resultado);
+                Swal.fire("La cantidad de Yenes Japoneses seleccionadas son: $"+ resultado.toFixed(2),"(El precio esta reflejado en Pesos Argentinos)");
+            }
         else{
             Swal.fire({
                 icon: "error",
                 title: "ERROR",
-                text: "Imposible de convertir",
-                footer: "Por favor, coloque un valor real"
+                text: "Imposible de convertir. Por favor coloque un valor a convertir",
             });
         }
     })

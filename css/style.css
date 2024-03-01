@@ -1,0 +1,28 @@
+@font-face {
+    font-family: "LTSaeada-Light";
+    src: url(./font/LTSaeada-Light.otf);
+}
+body{
+    font-family: LTSaeada-Light;
+}
+.operador{
+    width: 500px;
+    position: relative;
+    left: 29%;
+    top: 100px;
+    border: 2px solid;
+    padding: 10px;
+    background-color: beige;
+}
+.titulo1{
+    font-size: 35px;
+    text-align: center;
+}
+.form{
+    text-align: center;
+}
+.selec{
+    font-size: 22px;
+    position: relative;
+    margin-bottom: 27px;
+}
