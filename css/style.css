@@ -1,6 +1,6 @@
 @font-face {
     font-family: "LTSaeada-Light";
-    src: url(./font/LTSaeada-Light.otf);
+    src: url(../font/LTSaeada-Light.otf);
 }
 body{
     font-family: LTSaeada-Light;
